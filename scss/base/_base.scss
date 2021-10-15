@@ -1,0 +1,18 @@
+.promotion,
+.product,
+.product-eco,
+.fullservice {
+    text-align: center;
+    [class^="sector-"] {
+        position: relative;
+    }
+    .wrap {
+        position: relative;
+        margin: 0 auto;
+    }
+    .wrap-full {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+    }
+}

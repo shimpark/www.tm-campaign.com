@@ -1,0 +1,121 @@
+.tmap {
+    overflow-x: hidden;
+    @include breakpoint(desktop){
+        min-width: 1200px;
+    }
+    * { font-family: $font-spoqa; }
+    .only-mobile {
+        display: block;
+        @include breakpoint(desktop){
+            display: none;
+        }
+    }
+
+    .only-pc {
+        display: none;
+        @include breakpoint(desktop){
+            display: block;
+        }
+    }
+
+    .tmap-header {
+        @extend .grid;
+        z-index: 100;
+        .header-logo {
+            @extend .col;
+            a {
+                display: block;
+                @include vw(width, 230px);
+                @include vw(padding, 40px 0 0 47px);
+                @include boxSizing(border-box);
+                @include breakpoint(desktop){
+                    width: 348px;
+                    padding: 0;
+                    margin: 35px 0 35px 200px;
+                }
+            }
+        }
+        .header-menu {
+            @extend .col-right;
+            position: initial;
+            &.active {
+                .menu-list {
+                    visibility: visible;
+                    // @include translateY(0);
+                    @include vw(height, 330px);
+                    a { display: block; }
+                }
+            }
+            .btn-menu {
+                display: block;
+                @include vw(width, 100px);
+                @include vw(height, 100px);
+                @include bg($url: '../img/mobile/icon_menu.png', $position: center center);
+                @include vw(background-size, 56px);
+                span { @extend .sr-only; }
+                @include breakpoint(desktop){
+                    display: none;
+                }
+            }
+            .menu-list {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                z-index: map-get($z-index, menu);
+                width: 100%;
+                height: 0;
+                background: rgba(0, 0, 0, .8);
+                visibility: hidden;
+                @include boxSizing(border-box);
+                // @include translateY(-100%);
+                @include transition(all, .3s);
+                @include breakpoint(desktop){
+                    position: static;
+                    top: auto;
+                    width: auto;
+                    height: auto;
+                    margin: 28px 123px 27px 0;
+                    padding: 0;
+                    visibility: visible;
+                    border: none;
+                    background: none;
+                    // @include translateY(0);
+                }
+                a {
+                    display: none;
+                    text-align: left;
+                    @include vw(padding, 34px 0 33px 457px);
+                    @include vw(font-size, 30px);
+                    color: #fff;
+                    border-top: 1px solid #acacac;
+                    // @include transitionDelay(.1s);
+                    @include breakpoint(desktop){
+                        display: inline-block;
+                        margin-left: 95px;
+                        padding: 0;
+                        color: #000;
+                        border-top: none;
+                        &:first-child { margin-left: 0; }
+                    }
+                }
+            }
+        }
+    }
+
+    .tmap-footer {
+        @include vw(margin-top, 233px);
+        @include vw(padding-bottom, 41px);
+        @include breakpoint(desktop){
+            margin-top: 150px;
+            padding-bottom: 65px;
+        }
+        .copy {
+            @include vw(font-size, 20px);
+            font-weight: normal;
+            line-height: 1.25;
+            text-align: center;
+            letter-spacing: normal;
+        }
+    }
+}
