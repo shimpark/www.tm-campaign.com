@@ -5,12 +5,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-<meta property="og:url" content="" />
-<meta property="og:title" content="일상의 모든 TM, TMAP" />
-<meta property="og:description" content="일상의 모든 TM, TMAP. TMAP MOBILITY" />
-<meta property="og:image" content="/img/og.jpg">
-<meta property="og:image:width" content="600">
-<meta property="og:image:height" content="350">
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:url" content="https://www.tm-campaign.com" />
+<meta property="og:image" content="https://www.tm-campaign.com/img/og.png" />
+<meta property="og:title" content="일상의 모든 TM, TMAP">
+<meta property="og:description" content="일상의 모든 TM, TMAP. TMAP MOBILITY">
+
+<meta property="fb:app_id" content="1469974200068490" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="일상의 모든 TM, TMAP" />
+<meta name="twitter:url" content="https://www.tm-campaign.com" />
+<meta name="twitter:image" content="https://www.tm-campaign.com/img/og.png" />
+<meta name="twitter:description" content="일상의 모든 TM, TMAP. TMAP MOBILITY" />
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keyword" content="티맵모빌리티, T지금, TMAP 안심대리, TMAP 플러스, TMAP,  TMAP MOBILITY">
 <meta name="description" content="일상의 모든 TM, TMAP. TMAP MOBILITY">
@@ -294,7 +304,7 @@
                         <a href="javascript: popupOpen('.popup-dim', 'popupPreviewBR');">
                             <span class="thumb"><img src="/img/mobile/thumb_b2.png" alt="" class="responsive"></span>
                             <span class="unit">@</span>
-                            <span class="location">서울버스<em class="badge">5</em></span>
+                            <span class="location">서울 버스<em class="badge">5</em></span>
                         </a>
                     </div>
                 </div>
@@ -358,7 +368,7 @@
                 <a href="https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000703533" target="_blank">
                     <img src="/img/mobile/icon_one.png" alt="ONE Store" class="responsive">
                     <span>ONE Store</span>
-                </a>
+                </a>                
             </div>
         </article>
     </main>
@@ -510,13 +520,43 @@
     </div>
     <a href="javascript: popupClose('.popup-dim', 'popupPreviewY');" class="popup-close"><span>닫기</span></a>
 </div>
+
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="/js/univ.share.js"></script>
+
 <script type="text/javascript" src="/libs/slick/slick.min.js"></script>
 <script src="/js/script.js?v=1"></script>
+
+
+
 <script>
     $(window).on("resize", function(){
         var wid = $(window).width();
         console.log(wid);
     });
+
+    $(document).ready(function () {           
+
+        var shareUrl = "https://www.tm-campaign.com";
+
+        Share.init({
+            twitterButton: ".twitter",
+            naverButton: "",
+            kakaotalkButton: ".kakao",
+            facebookButton: ".facebook",
+            urlcopyButton: "",
+            kakaostoryButton: ".kakaostory",
+            emailButton: "",
+            smsButton: "",
+
+            kakaoJavascriptID: "38eff66bc8fded055973824a7d76d433",
+            facebookAppID: "1469974200068490",
+            url: shareUrl,
+            title: "일상의 모든 TM, TMAP",
+            solutionTitle: "일상의 모든 TM, TMAP"
+        });
+    });
+
 </script>
 </body>
 </html>
