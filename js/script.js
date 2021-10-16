@@ -15,15 +15,14 @@ $(function(){
 });
 
 function tmapInit(){
+    pageMove('.page-move');
     create();
     addEvent();
     slideEvent();
     menuAction();
-    pageMove('.page-move');
-    // thumbEvent();
+    scrollEvent();
 
     if( isMobile ) {
-        // onlyMobile();
     }
 }
 
@@ -112,6 +111,22 @@ function menuAction(){
         e.preventDefault();
 
         $(this).parent().toggleClass('active');
+    });
+}
+
+function scrollEvent(){
+    $(window).on('scroll', function(){
+        $('.tmap-share').addClass('active');
+
+        if ( $(window).scrollTop == 0 && $(window) ){
+            $('.tmap-share').removeClass('active');
+        }
+    });
+
+    $('.js-toggle').on('click', function(e){
+        e.preventDefault();
+
+        $(this).parent().siblings().toggleClass('active');
     });
 }
 

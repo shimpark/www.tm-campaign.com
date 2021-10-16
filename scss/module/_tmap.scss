@@ -424,4 +424,108 @@
             }
         }
     }
+
+    .tmap-share {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        @include translateY(100%);
+        @include transition(all, .3s);
+        @include breakpoint(desktop) {
+            top: 216px;
+            bottom: auto;
+            left: auto;
+            @include translateY(0);
+            @include translateX(100%);
+        }
+        &.active {
+            @include translateY(0);
+            @include breakpoint(desktop) {
+                @include translateX(0);
+            }
+        }
+        .share-list {
+            font-size: 0;
+            a {
+                position: relative;
+                display: inline-block;
+                width: 33.33%;
+                @include vw(padding, 41.5px 0 41.5px);
+                @include vw(font-size, 30px);
+                font-weight: 400;
+                line-height: .73;
+                color: #fff;
+                @include vw(letter-spacing, -.9px);
+                background-color: #000;
+                @include boxSizing(border-box);
+                @include breakpoint(desktop) {
+                    display: block;
+                    width: 150px;
+                    height: 150px;
+                    margin-top: 10px;
+                    padding: 0;
+                    line-height: 1;
+                    border-radius: 50%;
+                }
+                &:first-child {
+                    @include breakpoint(desktop) {
+                        margin-top: 0;
+                    }
+                    &:before { display: none; }
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    @include vw(top, 10px);
+                    @include vw(bottom, 10px);
+                    left: 0;
+                    display: block;
+                    @include vw(width, 1px);
+                    // height: 100%;
+                    background: rgba(255, 255, 255, .2);
+                    @include breakpoint(desktop) {
+                        display: none;
+                    }
+                }
+                span {
+                    @extend %flexCenter;
+                    height: 100%;
+                }
+            }
+        }
+        .sns-list {
+            position: relative;
+            z-index: -1;
+            line-height: 1;
+            font-size: 0;
+            @include translateY(100%);
+            @include transition(all, .5s, cubic-bezier(0.68, -0.55, 0.27, 1.55));
+            @include breakpoint(desktop) {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                @include translateXY(100%, 20px);
+            }
+            &.active {
+                display: block;
+                @include translateY(-20%);
+                @include breakpoint(desktop) {
+                    @include translateXY(-50%, 20px);
+                }
+            }
+            a {
+                display: inline-block;
+                @include vw(width,100px);
+                @include vw(height,100px);
+                @include vw(margin, 0 25px);
+                @include breakpoint(desktop) {
+                    display: block;
+                    margin: 10px 0;
+                    &:first-child { margin: 0; }
+                }
+            }
+        }
+    }
 }

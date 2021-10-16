@@ -97,6 +97,7 @@
                         color: #000;
                         border-top: none;
                         &:first-child { margin-left: 0; }
+                        &:last-child { display: none; }
                     }
                 }
             }
