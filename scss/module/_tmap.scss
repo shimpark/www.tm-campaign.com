@@ -492,7 +492,7 @@
         @include translateY(100%);
         @include transition(all, .3s);
         @include breakpoint(desktop) {
-            top: 216px;
+            top: 8%;
             bottom: auto;
             left: auto;
             @include translateY(0);
@@ -566,11 +566,19 @@
                 left: 50%;
                 @include translateXY(100%, 20px);
             }
+            @media screen and (max-height: 1024px) {
+                right: 0;
+                left: auto;
+                white-space: nowrap;
+            }
             &.active {
                 display: block;
                 @include translateY(-20%);
                 @include breakpoint(desktop) {
                     @include translateXY(-50%, 20px);
+                }
+                @media screen and (max-height: 1024px) {
+                    @include translateXY(-5%, 20px);
                 }
             }
             a {
@@ -580,8 +588,13 @@
                 @include vw(margin, 0 25px);
                 @include breakpoint(desktop) {
                     display: block;
-                    margin: 10px 0;
+                    margin: 10px 0 0;
                     &:first-child { margin: 0; }
+                }
+                @media screen and (max-height: 1024px) {
+                    display: inline-block;
+                    margin: 0 5px;
+                    &:first-child { margin-right: 5px; }
                 }
             }
         }

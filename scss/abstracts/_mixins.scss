@@ -27,6 +27,13 @@
     }
 }
 
+// @include rwdHeight(1400) { ... }
+@mixin rwdHeight($height) {
+    @media (min-height: $height+'px') {
+        @content;
+    }
+}
+
 // box-sizing
 // @include boxSizing(border-box);
 @mixin boxSizing($box) {

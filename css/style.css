@@ -5981,7 +5981,7 @@ button {
 
 @media screen and (min-width: 1200px) {
   .tmap .tmap-share {
-    top: 216px;
+    top: 8%;
     bottom: auto;
     left: auto;
     -webkit-transform: translateY(0);
@@ -6124,6 +6124,14 @@ button {
   }
 }
 
+@media screen and (max-height: 1024px) {
+  .tmap .tmap-share .sns-list {
+    right: 0;
+    left: auto;
+    white-space: nowrap;
+  }
+}
+
 .tmap .tmap-share .sns-list.active {
   display: block;
   -webkit-transform: translateY(-20%);
@@ -6134,6 +6142,13 @@ button {
   .tmap .tmap-share .sns-list.active {
     -webkit-transform: translate(-50%, 20px);
     transform: translate(-50%, 20px);
+  }
+}
+
+@media screen and (max-height: 1024px) {
+  .tmap .tmap-share .sns-list.active {
+    -webkit-transform: translate(-5%, 20px);
+    transform: translate(-5%, 20px);
   }
 }
 
@@ -6165,10 +6180,20 @@ button {
 @media screen and (min-width: 1200px) {
   .tmap .tmap-share .sns-list a {
     display: block;
-    margin: 10px 0;
+    margin: 10px 0 0;
   }
   .tmap .tmap-share .sns-list a:first-child {
     margin: 0;
+  }
+}
+
+@media screen and (max-height: 1024px) {
+  .tmap .tmap-share .sns-list a {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  .tmap .tmap-share .sns-list a:first-child {
+    margin-right: 5px;
   }
 }
 /*# sourceMappingURL=style.css.map */
