@@ -228,20 +228,6 @@
     &:nth-child(10):nth-last-child(1) { width: 10%; }
 }
 
-// 별점
-%star {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: url('//img.eduwill.net/eduwill/img/common/icon/icon_star_off.png') 0 0 no-repeat;
-    background-size: cover;
-    &.on { background-image: url('//img.eduwill.net/eduwill/img/common/icon/icon_star_on.png'); }
-    @include breakpoint(desktop){
-        width: 13px;
-        height: 13px;
-    }
-}
-
 // animation
 .effect-bounce-diagonal {
     @include animation(effectBounceDiagonal, .8s, $iteration: infinite){

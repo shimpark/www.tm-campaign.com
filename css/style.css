@@ -5693,6 +5693,180 @@ button {
   }
 }
 
+.tmap .tmap-event-open .img-box {
+  background: #ffd49d;
+}
+
+.tmap .tmap-event-open .event-list {
+  margin: 12.5vw 5.55556vw 0;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list {
+    margin: 90px 40px 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .tmap .tmap-event-open .event-list {
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 0;
+  }
+}
+
+.tmap .tmap-event-open .event-list a {
+  display: block;
+  margin-top: 3.88889vw;
+  padding: 9.58333vw 19.16667vw 11.66667vw 6.94444vw;
+  color: #fff;
+  border-radius: 6.94444vw;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list a {
+    margin-top: 28px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list a {
+    padding: 69px 138px 84px 50px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list a {
+    border-radius: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .tmap .tmap-event-open .event-list a {
+    display: inline-block;
+    vertical-align: top;
+    width: 555px;
+    margin: 0 0 0 28px;
+    padding: 69px 34px 84px 50px;
+  }
+}
+
+.tmap .tmap-event-open .event-list a:first-child {
+  margin-top: 0;
+  background-color: #32e6af;
+}
+
+@media screen and (min-width: 1200px) {
+  .tmap .tmap-event-open .event-list a:first-child {
+    margin-left: 0;
+  }
+}
+
+.tmap .tmap-event-open .event-list a:last-child {
+  background-color: #783cff;
+}
+
+.tmap .tmap-event-open .event-list .text-box {
+  position: static;
+  text-align: left;
+}
+
+.tmap .tmap-event-open .event-list .text-box .big-title, .tmap .tmap-event-open .event-list .text-box .img-title span {
+  margin-top: 0.97222vw;
+  font-size: 8.33333vw;
+  letter-spacing: -0.41667vw;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list .text-box .big-title, .tmap .tmap-event-open .event-list .text-box .img-title span {
+    margin-top: 7px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list .text-box .big-title, .tmap .tmap-event-open .event-list .text-box .img-title span {
+    font-size: 60px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list .text-box .big-title, .tmap .tmap-event-open .event-list .text-box .img-title span {
+    letter-spacing: -3px;
+  }
+}
+
+.tmap .tmap-event-open .event-list .text-box .big-title + .small-title, .tmap .tmap-event-open .event-list .text-box .img-title span + .small-title {
+  margin-top: 3.61111vw;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list .text-box .big-title + .small-title, .tmap .tmap-event-open .event-list .text-box .img-title span + .small-title {
+    margin-top: 26px;
+  }
+}
+
+.tmap .tmap-event-open .event-list .text-box .big-title .arrow, .tmap .tmap-event-open .event-list .text-box .img-title span .arrow {
+  display: inline-block;
+  margin-left: 1.38889vw;
+  -webkit-animation-name: effectMoving;
+          animation-name: effectMoving;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list .text-box .big-title .arrow, .tmap .tmap-event-open .event-list .text-box .img-title span .arrow {
+    margin-left: 10px;
+  }
+}
+
+@-webkit-keyframes effectMoving {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes effectMoving {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+
+.tmap .tmap-event-open .event-list .text-box .small-title {
+  font-size: 5.55556vw;
+  letter-spacing: -0.27778vw;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list .text-box .small-title {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open .event-list .text-box .small-title {
+    letter-spacing: -2px;
+  }
+}
+
 .tmap .tmap-sns {
   margin: 0 8.75%;
   margin-top: 18.33333vw;

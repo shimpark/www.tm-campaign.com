@@ -387,6 +387,64 @@
         }
     }
 
+    .tmap-event-open {
+        .img-box { background: #ffd49d; }
+
+        .event-list {
+            @include vw(margin, 90px 40px 0);
+            @include breakpoint(desktop) {
+                margin-right: 0;
+                margin-left: 0;
+                font-size: 0;
+            }
+            a {
+                display: block;
+                @include vw(margin-top, 28px);
+                @include vw(padding, 69px 138px 84px 50px);
+                color: #fff;
+                @include vw(border-radius, 50px);
+                @include boxSizing(border-box);
+                @include breakpoint(desktop) {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 555px;
+                    margin: 0 0 0 28px;
+                    padding: 69px 34px 84px 50px;
+                }
+                &:first-child {
+                    margin-top: 0;
+                    background-color: #32e6af;
+                    @include breakpoint(desktop) {
+                        margin-left: 0;
+                    }
+                }
+                &:last-child { background-color: #783cff; }
+            }
+            .text-box {
+                position: static;
+                text-align: left;
+                .big-title {
+                    @include vw(margin-top, 7px);
+                    @include vw(font-size, 60px);
+                    @include vw(letter-spacing, -3px);
+                    & + .small-title { @include vw(margin-top, 26px); }
+                    .arrow {
+                        display: inline-block;
+                        @include vw(margin-left, 10px);
+                        @include animation(effectMoving, 1s, $iteration: infinite){
+                            0%, 100% { @include translateX(0); }
+                            50% { @include translateX(-10px); }
+                        }
+                    }
+                }
+                .small-title {
+                    @include vw(font-size, 40px);
+                    @include vw(letter-spacing, -2px);
+                }
+            }
+        }
+    }
+
     .tmap-sns {
         margin: 0 percent(63);
         @include vw(margin-top, 132px);

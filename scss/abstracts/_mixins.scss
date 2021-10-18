@@ -412,8 +412,8 @@
 
 
 // pointer
-// @include pointer(50%, 0, 66px, 73px, 20, bounce);
-@mixin pointer($top, $right, $width, $height, $iconNumber, $animation) {
+// @include pointer(50%, 0, 66px, 73px, '../img/icon_pointer.png', bounce);
+@mixin pointer($top, $right, $width, $height, $bg, $animation) {
     position: relative;
     display: inline-block;
     &:after {
@@ -425,7 +425,7 @@
         display: block;
         @include rem(width, $width);
         @include rem(height, $height);
-        background: url('#{$img-pointer-path}/icon_pointer_#{$iconNumber}.png') no-repeat 0 0;
+        background: url($bg) no-repeat 0 0;
         background-size: 100% auto;
 
 
