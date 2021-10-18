@@ -6124,7 +6124,7 @@ button {
   }
 }
 
-@media screen and (max-height: 1024px) {
+@media screen and (min-width: 1200px) and (max-height: 1024px) {
   .tmap .tmap-share .sns-list {
     right: 0;
     left: auto;
@@ -6145,7 +6145,7 @@ button {
   }
 }
 
-@media screen and (max-height: 1024px) {
+@media screen and (min-width: 1200px) and (max-height: 1024px) {
   .tmap .tmap-share .sns-list.active {
     -webkit-transform: translate(-5%, 20px);
     transform: translate(-5%, 20px);
@@ -6187,7 +6187,7 @@ button {
   }
 }
 
-@media screen and (max-height: 1024px) {
+@media screen and (min-width: 1200px) and (max-height: 1024px) {
   .tmap .tmap-share .sns-list a {
     display: inline-block;
     margin: 0 5px;
