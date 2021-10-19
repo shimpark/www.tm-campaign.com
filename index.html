@@ -86,7 +86,7 @@
                 </div>
 
                 <div class="share-list">
-                    <a href="javascript:void(0);"><span>APP <br class="only-pc">다운로드</span></a>
+                    <a href="javascript:void(0);" id="btn-sns-move"><span>APP <br class="only-pc">다운로드</span></a>
                     <a href="#tmapEvent" class="page-move"><span>이벤트</span></a>
                     <a href="javascript:void(0);" class="js-toggle"><span>공유하기</span></a>
                 </div>
@@ -384,7 +384,7 @@
                 </div>
             </article>
 
-            <article class="tmap-sns">
+            <article id="tmap-sns-move" class="tmap-sns">
                 <div class="sns-list">
                     <a href="https://www.tmapmobility.com/" target="_blank">
                         <img src="/img/mobile/icon_home.png" alt="home" class="responsive">
@@ -580,6 +580,23 @@
         });
 
         $(document).ready(function () {
+
+            $('#btn-sns-move').click(function (e) {
+                e.preventDefault();
+
+                var IorA = navigator.userAgent.toLowerCase();
+        
+                if(IorA.indexOf("android") !== -1){
+                    // android 일 때
+                    location = "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
+                } else if(IorA.indexOf("iphone") !== -1){
+                    // iphone 일 때
+                    location = "https://apps.apple.com/kr/app/id431589174";
+                } else {
+                    document.getElementById('tmap-sns-move').scrollIntoView({block: 'start', behavior: 'smooth'});
+                }
+                
+            });
 
             var shareUrl = "https://www.tm-campaign.com";
 
