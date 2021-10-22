@@ -27,7 +27,7 @@
     <meta name="description" content="일상의 모든 TM, TMAP. TMAP MOBILITY">
     <title>나만 몰라 틈 캠페인? 지금 보러 가기</title>
     <link rel="stylesheet" href="/libs/slick/slick.css?v=3">
-    <link rel="stylesheet" href="/css/style.css?v=4">
+    <link rel="stylesheet" href="/css/style.css?v=5">
     <script src="/libs/jquery/jquery-2.1.4.min.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -115,7 +115,8 @@
                     <div class="slide-list">
                         <div>
                             <a href="javascript: popupOpen('.popup-dim', 'popupPreviewG');">
-                                <span class="thumb"><img src="/img/mobile/thumb_g.png?v=1" alt="" class="responsive"></span>
+                                <span class="thumb"><img src="/img/mobile/thumb_g.png?v=1" alt=""
+                                        class="responsive"></span>
                                 <span class="unit">@</span>
                                 <span class="location">가로수길<em class="badge">1</em></span>
                             </a>
@@ -270,12 +271,14 @@
 
                 <div class="video-box">
                     <div class="video">
-                        <video preload="auto" playsinline autoplay muted controls>
-                            <source src="/img/now.mp4" type="video/mp4">
-                        </video>
+                        <iframe
+                            src="https://www.youtube.com/embed/8GdhfwaYiYw?autoplay=1&loop=1&playlist=8GdhfwaYiYw&mute=1"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                         <!-- <div class="video-cover">
-                        <img src="/img/mobile/cf_thumb1.png" alt="" class="responsive">
-                    </div> -->
+                            <img src="../img/mobile/cf_thumb1.png" alt="" class="responsive">
+                        </div> -->
                     </div>
                 </div>
             </article>
@@ -330,7 +333,8 @@
                         </div>
                         <div>
                             <a href="javascript: popupOpen('.popup-dim', 'popupPreviewBR');">
-                                <span class="thumb"><img src="/img/mobile/thumb_b2.png" alt="" class="responsive"></span>
+                                <span class="thumb"><img src="/img/mobile/thumb_b2.png" alt=""
+                                        class="responsive"></span>
                                 <span class="unit">@</span>
                                 <span class="location">서울 버스<em class="badge">5</em></span>
                             </a>
@@ -350,12 +354,14 @@
 
                 <div class="video-box">
                     <div class="video">
-                        <video preload="auto" playsinline autoplay muted controls>
-                            <source src="/img/relax.mp4" type="video/mp4">
-                        </video>
+                        <iframe
+                            src="https://www.youtube.com/embed/xyH1EAqcZUU?autoplay=1&loop=1&playlist=xyH1EAqcZUU&mute=1"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                         <!-- <div class="video-cover">
-                        <img src="/img/mobile/cf_thumb2.png" alt="" class="responsive">
-                    </div> -->
+                            <img src="../img/mobile/cf_thumb2.png" alt="" class="responsive">
+                        </div> -->
                     </div>
                 </div>
             </article>
@@ -585,17 +591,17 @@
                 e.preventDefault();
 
                 var IorA = navigator.userAgent.toLowerCase();
-        
-                if(IorA.indexOf("android") !== -1){
+
+                if (IorA.indexOf("android") !== -1) {
                     // android 일 때
                     location = "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
-                } else if(IorA.indexOf("iphone") !== -1){
+                } else if (IorA.indexOf("iphone") !== -1) {
                     // iphone 일 때
                     location = "https://apps.apple.com/kr/app/id431589174";
                 } else {
-                    document.getElementById('tmap-sns-move').scrollIntoView({block: 'start', behavior: 'smooth'});
+                    document.getElementById('tmap-sns-move').scrollIntoView({ block: 'start', behavior: 'smooth' });
                 }
-                
+
             });
 
             var shareUrl = "https://www.tm-campaign.com";

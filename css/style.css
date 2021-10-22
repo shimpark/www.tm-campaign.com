@@ -5540,8 +5540,10 @@ button {
   }
 }
 
+.tmap .tmap-cf .video-box .video,
 .tmap .tmap-cf .video-box video,
 .tmap .tmap-cf .video-box iframe {
+  display: block;
   width: 100%;
   height: 100%;
 }
