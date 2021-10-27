@@ -601,4 +601,44 @@
             }
         }
     }
+
+    .tmap-banner {
+        @include vw(margin-top, -180px);
+        @include vw(padding-bottom, 140px);
+        .banner-box {
+            @include vw(margin, 0 40px);
+            a {
+                display: inline-block;
+                width: 100%;
+                @include vw(padding, 24px 45px);
+                @include vw(font-size, 30px);
+                color: #fff;
+                @include vw(border-radius, 50px);
+                border: solid 1px #707070;
+                background-color: #0064ff;
+                background-image: url('../img/mobile/icon_arrow.png');
+                background-repeat: no-repeat;
+                background-position: 90% center;
+                @include vw(background-size, 40px);
+                @include boxSizing(border-box);
+                @include breakpoint(desktop){
+                    width: 1138px;
+                    padding: 26.7px 71.4px 30px;
+                    background-image: url('../img/pc/icon_arrow.png');
+                    background-size: 60px;
+                }
+                strong { font-weight: normal; color: #32e6af; }
+                img {
+                    display: block;
+                    @include vw(width, 264px);
+                    @include vw(margin-bottom, 6px);
+                    margin: 0 auto;
+                    @include breakpoint(desktop){
+                        width: 351px;
+                        margin-bottom: 13px;
+                    }
+                }
+            }
+        }
+    }
 }
