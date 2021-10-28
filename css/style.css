@@ -6237,10 +6237,19 @@ button {
   background-color: #0064ff;
   background-image: url("../img/mobile/icon_arrow.png");
   background-repeat: no-repeat;
-  background-position: 90% center;
-  background-size: 5.55556vw;
+  background-size: 2.77778vw;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-animation-name: effectMovingMO;
+          animation-name: effectMovingMO;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
 }
 
 @media screen and (min-width: 720px) {
@@ -6263,7 +6272,25 @@ button {
 
 @media screen and (min-width: 720px) {
   .tmap .tmap-banner .banner-box a {
-    background-size: 40px;
+    background-size: 20px;
+  }
+}
+
+@-webkit-keyframes effectMovingMO {
+  0%, 100% {
+    background-position: 90% 66%;
+  }
+  50% {
+    background-position: 91% 66%;
+  }
+}
+
+@keyframes effectMovingMO {
+  0%, 100% {
+    background-position: 90% 66%;
+  }
+  50% {
+    background-position: 91% 66%;
   }
 }
 
@@ -6273,6 +6300,32 @@ button {
     padding: 26.7px 71.4px 30px;
     background-image: url("../img/pc/icon_arrow.png");
     background-size: 60px;
+    -webkit-animation-name: effectMovingPC;
+            animation-name: effectMovingPC;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation-direction: normal;
+            animation-direction: normal;
+  }
+  @-webkit-keyframes effectMovingPC {
+    0%, 100% {
+      background-position: 90% center;
+    }
+    50% {
+      background-position: 91% center;
+    }
+  }
+  @keyframes effectMovingPC {
+    0%, 100% {
+      background-position: 90% center;
+    }
+    50% {
+      background-position: 91% center;
+    }
   }
 }
 

@@ -618,14 +618,21 @@
                 background-color: #0064ff;
                 background-image: url('../img/mobile/icon_arrow.png');
                 background-repeat: no-repeat;
-                background-position: 90% center;
-                @include vw(background-size, 40px);
+                @include vw(background-size, 20px);
                 @include boxSizing(border-box);
+                @include animation(effectMovingMO, 1s, $iteration: infinite){
+                    0%, 100% { background-position: 90% 66%; }
+                    50% { background-position: 91% 66%; }
+                }
                 @include breakpoint(desktop){
                     width: 1138px;
                     padding: 26.7px 71.4px 30px;
                     background-image: url('../img/pc/icon_arrow.png');
                     background-size: 60px;
+                    @include animation(effectMovingPC, 1s, $iteration: infinite){
+                        0%, 100% { background-position: 90% center; }
+                        50% { background-position: 91% center; }
+                    }
                 }
                 strong { font-weight: normal; color: #32e6af; }
                 img {
