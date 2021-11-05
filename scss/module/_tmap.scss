@@ -332,6 +332,7 @@
         @include linear-gradient(to left, #ff46b4, #783cff);
         .text-box {
             top: percent(196,960);
+            left: percent(30);
             text-align: left;
             color: #fff;
             @include breakpoint(desktop) {
@@ -471,6 +472,49 @@
                         font-weight: bold;
                         color: #783cff;
                     }
+                }
+                .arrow {
+                    @include vw(width, 40px);
+                    @include vw(margin-left, 40px);
+                    vertical-align: middle;
+                    line-height: 1;
+                }
+            }
+        }
+        &.open-211105 {
+           .img-box {
+                background: #fff;
+                img { width: 100%; }
+            }
+            .event-list {
+                a {
+                    @include vw(padding, 47px 0 52px 50px);
+                    @include breakpoint(desktop){
+                        padding: 60px 50px;
+                        &:first-child {
+                            padding: 49px 50px;
+                        }
+                    }
+                }
+                .text-box .big-title {
+                    @include vw(margin-top, 20px);
+                    @include vw(font-size, 50px);
+                    @include breakpoint(desktop){
+                        font-size: 46px;
+                    }
+                    & + .small-title {
+                        @include vw(margin-top, 23px);
+                        @include vw(font-size, 46px);
+                        font-weight: bold;
+                        color: #0064ff;
+                        .arrow {
+                            display: inline-block;
+                            @include animation(effectMoving2, 1s, $iteration: infinite){
+                                0%, 100% { @include translateX(0); }
+                                50% { @include translateX(-10px); }
+                            }
+                        }
+                    }
                     .arrow {
                         @include vw(width, 40px);
                         @include vw(margin-left, 40px);
@@ -567,11 +611,11 @@
                 &:first-child {
                     background: #ff46b4;
                     @include breakpoint(desktop) {
-                        height: 188px;
+                        // height: 188px;
                         margin-top: 0;
                         font-size: 0;
                         border-radius: 0;
-                        background: url('../img/pc/icon_event.png') no-repeat 0 0;
+                        background: url('../img/pc/icon_event2.png') no-repeat 0 0;
                         background-size: auto 100%;
                     }
                     &:before { display: none; }
