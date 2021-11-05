@@ -391,7 +391,6 @@
 
     .tmap-event-open {
         .img-box { background: #ffd49d; }
-
         .event-list {
             @include vw(margin, 90px 40px 0);
             @include breakpoint(desktop) {
@@ -442,6 +441,42 @@
                 .small-title {
                     @include vw(font-size, 40px);
                     @include vw(letter-spacing, -2px);
+                }
+            }
+        }
+        &.open-211101 {
+           .img-box {
+                background: #fff;
+                img { width: 100%; }
+            }
+            .event-list {
+                a {
+                    @include vw(padding, 47px 0 52px 50px);
+                    @include breakpoint(desktop){
+                        padding: 60px 50px;
+                        &:first-child {
+                            padding: 49px 50px;
+                        }
+                    }
+                }
+                .text-box .big-title {
+                    @include vw(margin-top, 20px);
+                    @include vw(font-size, 50px);
+                    @include breakpoint(desktop){
+                        font-size: 46px;
+                    }
+                    & + .small-title {
+                        @include vw(margin-top, 23px);
+                        @include vw(font-size, 46px);
+                        font-weight: bold;
+                        color: #783cff;
+                    }
+                    .arrow {
+                        @include vw(width, 40px);
+                        @include vw(margin-left, 40px);
+                        vertical-align: middle;
+                        line-height: 1;
+                    }
                 }
             }
         }
@@ -530,8 +565,14 @@
                     border-radius: 50%;
                 }
                 &:first-child {
+                    background: #ff46b4;
                     @include breakpoint(desktop) {
+                        height: 188px;
                         margin-top: 0;
+                        font-size: 0;
+                        border-radius: 0;
+                        background: url('../img/pc/icon_event.png') no-repeat 0 0;
+                        background-size: auto 100%;
                     }
                     &:before { display: none; }
                 }
