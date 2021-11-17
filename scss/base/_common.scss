@@ -42,7 +42,7 @@
                 .menu-list {
                     visibility: visible;
                     // @include translateY(0);
-                    @include vw(height, 330px);
+                    @include vw(height, 450px);
                     a { display: block; }
                 }
             }

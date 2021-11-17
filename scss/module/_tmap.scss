@@ -232,6 +232,36 @@
         }
     }
 
+    .tmap-plus {
+        @include linear-gradient(to left, #d94796, #5870f6);
+        .text-box {
+            top: percent(107,1003);
+            text-align: left;
+            color: #fff;
+            @include breakpoint(desktop) {
+                left: 30%;
+                text-align: center;
+                .img-title img { margin: 19px 20px 0 0; }
+            }
+            .img-title {
+                @include vw(margin-top, 20px);
+                img { @include vw(width, 420px); }
+                & + .small-title {
+                    @include vw(margin-top, 34px);
+                    @include breakpoint(desktop) {
+                        margin-top: 38px;
+                    }
+                    & + .small-title {
+                        @include vw(margin-top, 23px);
+                        @include breakpoint(desktop) {
+                            margin-top: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .tmap-now {
         color: #fff;
         @include linear-gradient(to right, #0064ff, #32e6af);
@@ -286,6 +316,13 @@
             }
             .video-box { @include vw(margin-top, 50px); }
         }
+        &.cf-3 {
+            .text-box {
+                .thin-title { @include vw(font-size, 50px); }
+                .small-title { @include vw(margin-top, 26px); }
+            }
+            .video-box { @include vw(margin-top, 113px); }
+        }
         .text-box {
             position: static;
             .thin-title {
@@ -332,7 +369,6 @@
         @include linear-gradient(to left, #ff46b4, #783cff);
         .text-box {
             top: percent(196,960);
-            left: percent(30);
             text-align: left;
             color: #fff;
             @include breakpoint(desktop) {
@@ -472,40 +508,35 @@
                         font-weight: bold;
                         color: #783cff;
                     }
-                }
-                .arrow {
-                    @include vw(width, 40px);
-                    @include vw(margin-left, 40px);
-                    vertical-align: middle;
-                    line-height: 1;
+                    .arrow {
+                        @include vw(width, 40px);
+                        @include vw(margin-left, 40px);
+                        vertical-align: middle;
+                        line-height: 1;
+                    }
                 }
             }
         }
         &.open-211105 {
-           .img-box {
-                background: #fff;
-                img { width: 100%; }
-            }
-            .event-list {
-                a {
+            .img-box {
+                 background: #fff;
+                 img { width: 100%; }
+             }
+             .event-list {
+                 a {
                     @include vw(padding, 47px 0 52px 50px);
                     @include breakpoint(desktop){
                         padding: 60px 50px;
-                        &:first-child {
-                            padding: 49px 50px;
-                        }
+                        &:first-child { padding: 60px 50px; }
                     }
-                }
-                .text-box .big-title {
+                 }
+                 .text-box .big-title {
                     @include vw(margin-top, 20px);
                     @include vw(font-size, 50px);
                     @include breakpoint(desktop){
                         font-size: 46px;
                     }
-                    & + .small-title {
-                        @include vw(margin-top, 23px);
-                        @include vw(font-size, 46px);
-                        font-weight: bold;
+                    strong {
                         color: #0064ff;
                         .arrow {
                             display: inline-block;
@@ -522,8 +553,8 @@
                         line-height: 1;
                     }
                 }
-            }
-        }
+             }
+         }
     }
 
     .tmap-sns {
