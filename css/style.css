@@ -6364,7 +6364,7 @@ button {
     margin-top: 0;
     font-size: 0;
     border-radius: 0;
-    background: url("../img/pc/icon_event2.png") no-repeat 0 0;
+    background: url("../img/pc/icon_event2.png?v=20211206") no-repeat 0 0;
     background-size: auto 100%;
   }
 }
