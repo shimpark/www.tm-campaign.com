@@ -75,6 +75,10 @@ function slideEvent(){
             pauseOnFocus: true,
         });
 
+        if ( $(sliderId).hasClass('slide-one') ){
+            $(sliderId).slick('unslick');
+        }
+
         // $(sliderId).slick('slickPlay').slick('setOption', 'autoplay', true);
     });
 

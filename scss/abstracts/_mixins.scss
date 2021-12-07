@@ -20,9 +20,9 @@
 }
 
 // Custom devices
-// @include rwdWidth(1400) { ... }
+// @include rwdWidth(1400px) { ... }
 @mixin rwdWidth($width) {
-    @media (min-width: $width+'px') {
+    @media (min-width: $width) {
         @content;
     }
 }

@@ -23,6 +23,9 @@
         z-index: 100;
         .header-logo {
             @extend .col;
+            @include breakpoint(desktop){
+                width: 30%;
+            }
             a {
                 display: block;
                 @include vw(width, 230px);
@@ -31,18 +34,25 @@
                 @include breakpoint(desktop){
                     width: 348px;
                     padding: 0;
-                    margin: 35px 0 35px 200px;
+                    margin: 35px 0 35px 10%;
+                }
+                @include rwdWidth(1920px) {
+                    margin-left: 200px;
                 }
             }
         }
         .header-menu {
             @extend .col-right;
             position: initial;
+            @include breakpoint(desktop){
+                width: 70%;
+                text-align: right;
+            }
             &.active {
                 .menu-list {
                     visibility: visible;
                     // @include translateY(0);
-                    @include vw(height, 450px);
+                    @include vw(height, 540px);
                     a { display: block; }
                 }
             }
@@ -75,12 +85,16 @@
                     top: auto;
                     width: auto;
                     height: auto;
-                    margin: 28px 123px 27px 0;
+                    margin: 28px 5% 27px 0;
                     padding: 0;
+                    white-space: nowrap;
                     visibility: visible;
                     border: none;
                     background: none;
                     // @include translateY(0);
+                }
+                @include rwdWidth(1920px) {
+                    margin-right: 123px;
                 }
                 a {
                     display: none;
@@ -92,12 +106,15 @@
                     // @include transitionDelay(.1s);
                     @include breakpoint(desktop){
                         display: inline-block;
-                        margin-left: 95px;
+                        margin-left: 10%;
                         padding: 0;
                         color: #000;
                         border-top: none;
                         &:first-child { margin-left: 0; }
                         &:last-child { display: none; }
+                        @include rwdWidth(1920px) {
+                            margin-left: 95px;
+                        }
                     }
                 }
             }

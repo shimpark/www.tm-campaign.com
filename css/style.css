@@ -4414,6 +4414,12 @@ button {
   z-index: 100;
 }
 
+@media screen and (min-width: 1200px) {
+  .tmap .tmap-header .header-logo {
+    width: 30%;
+  }
+}
+
 .tmap .tmap-header .header-logo a {
   display: block;
   width: 31.94444vw;
@@ -4438,7 +4444,13 @@ button {
   .tmap .tmap-header .header-logo a {
     width: 348px;
     padding: 0;
-    margin: 35px 0 35px 200px;
+    margin: 35px 0 35px 10%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .tmap .tmap-header .header-logo a {
+    margin-left: 200px;
   }
 }
 
@@ -4446,14 +4458,21 @@ button {
   position: initial;
 }
 
+@media screen and (min-width: 1200px) {
+  .tmap .tmap-header .header-menu {
+    width: 70%;
+    text-align: right;
+  }
+}
+
 .tmap .tmap-header .header-menu.active .menu-list {
   visibility: visible;
-  height: 62.5vw;
+  height: 75vw;
 }
 
 @media screen and (min-width: 720px) {
   .tmap .tmap-header .header-menu.active .menu-list {
-    height: 450px;
+    height: 540px;
   }
 }
 
@@ -4520,11 +4539,18 @@ button {
     top: auto;
     width: auto;
     height: auto;
-    margin: 28px 123px 27px 0;
+    margin: 28px 5% 27px 0;
     padding: 0;
+    white-space: nowrap;
     visibility: visible;
     border: none;
     background: none;
+  }
+}
+
+@media (min-width: 1920px) {
+  .tmap .tmap-header .header-menu .menu-list {
+    margin-right: 123px;
   }
 }
 
@@ -4552,7 +4578,7 @@ button {
 @media screen and (min-width: 1200px) {
   .tmap .tmap-header .header-menu .menu-list a {
     display: inline-block;
-    margin-left: 95px;
+    margin-left: 10%;
     padding: 0;
     color: #000;
     border-top: none;
@@ -4562,6 +4588,12 @@ button {
   }
   .tmap .tmap-header .header-menu .menu-list a:last-child {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-width: 1920px) {
+  .tmap .tmap-header .header-menu .menu-list a {
+    margin-left: 95px;
   }
 }
 
@@ -5024,6 +5056,9 @@ button {
   .tmap .tmap-slide {
     padding-bottom: 260px;
   }
+  .tmap .tmap-slide.slide-4 {
+    padding-bottom: 170px;
+  }
 }
 
 .tmap .slide-box {
@@ -5044,6 +5079,10 @@ button {
 
 .tmap .slide-box .slide-list [dir='rtl'] .slick-slide {
   float: left;
+}
+
+.tmap .slide-box .slide-list.slide-one {
+  display: inline-block;
 }
 
 .tmap .slide-box .slick-track,
@@ -5069,6 +5108,11 @@ button {
 .tmap .slide-box .slide-list .slick-slide:not(.slick-current) {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
+}
+
+.tmap .slide-box .slide-list .slick-slide:only-child {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .tmap .slide-box .slide-list a {
@@ -5367,6 +5411,55 @@ button {
   }
 }
 
+.tmap .tmap-new {
+  background: #32e6af;
+  background: -webkit-gradient(linear, right top, left top, from(#32e6af), to(#0064ff));
+  background: linear-gradient(to left, #32e6af, #0064ff);
+}
+
+.tmap .tmap-new .text-box {
+  top: 10.668%;
+  text-align: left;
+  color: #fff;
+}
+
+@media screen and (min-width: 1200px) {
+  .tmap .tmap-new .text-box {
+    top: 130px;
+    left: 20%;
+    text-align: center;
+  }
+  .tmap .tmap-new .text-box .img-title img {
+    margin: 19px 20px 0 0;
+  }
+}
+
+.tmap .tmap-new .text-box .img-title {
+  margin-top: 2.77778vw;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-new .text-box .img-title {
+    margin-top: 20px;
+  }
+}
+
+.tmap .tmap-new .text-box .img-title img {
+  width: 66.80556vw;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-new .text-box .img-title img {
+    width: 481px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .tmap .tmap-new .text-box .small-title {
+    margin-top: 30px;
+  }
+}
+
 .tmap .tmap-plus {
   background: #d94796;
   background: -webkit-gradient(linear, right top, left top, from(#d94796), to(#5870f6));
@@ -5588,6 +5681,36 @@ button {
 @media screen and (min-width: 720px) {
   .tmap .tmap-cf.cf-3 .video-box {
     margin-top: 113px;
+  }
+}
+
+.tmap .tmap-cf.cf-4 .text-box .thin-title {
+  font-size: 6.94444vw;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-cf.cf-4 .text-box .thin-title {
+    font-size: 50px;
+  }
+}
+
+.tmap .tmap-cf.cf-4 .text-box .small-title {
+  margin-top: 3.61111vw;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-cf.cf-4 .text-box .small-title {
+    margin-top: 26px;
+  }
+}
+
+.tmap .tmap-cf.cf-4 .video-box {
+  margin-top: 15.27778vw;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-cf.cf-4 .video-box {
+    margin-top: 110px;
   }
 }
 
