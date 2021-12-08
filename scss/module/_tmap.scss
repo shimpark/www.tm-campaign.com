@@ -1,801 +1,895 @@
 .tmap {
-    text-align: center;
-    color: $color-0;
+  text-align: center;
+  color: $color-0;
 
-    [class^="tmap-"] {
-        position: relative;
+  [class^='tmap-'] {
+    position: relative;
+  }
+
+  .text-box {
+    position: absolute;
+    right: percent(40);
+    left: percent(40);
+    @include breakpoint(desktop) {
+      right: auto;
+    }
+    .thin-title {
+      line-height: 1.26;
+      @include vw(font-size, 50px);
+      font-weight: 400;
+      @include vw(letter-spacing, -2.5px);
+      @include breakpoint(desktop) {
+        line-height: 1.25;
+        font-size: 60px;
+        letter-spacing: -3px;
+      }
+    }
+    .big-title {
+      line-height: 1.26;
+      @include vw(font-size, 70px);
+      font-weight: 700;
+      @include vw(letter-spacing, -3.5px);
+    }
+    .small-title {
+      line-height: 1.23;
+      @include vw(font-size, 30px);
+      font-weight: 400;
+      @include vw(letter-spacing, -1.5px);
+    }
+    .img-title {
+      vertical-align: top;
+      line-height: 1;
+      font-size: 0;
+      img {
+        @include vw(width, 220px);
+        vertical-align: top;
+      }
+      span {
+        @extend .big-title;
+      }
+    }
+  }
+
+  .tmap-slide {
+    @include vw(padding-bottom, 170px);
+    @include breakpoint(desktop) {
+      padding-bottom: 260px;
+      &.slide-4 {
+        padding-bottom: 170px;
+      }
+    }
+  }
+
+  .slide-box {
+    @include vw(margin-top, 80px);
+    @include breakpoint(desktop) {
+      margin-top: 86px;
     }
 
-    .text-box {
-        position: absolute;
-        right: percent(40);
-        left: percent(40);
-        @include breakpoint(desktop){
-            right: auto;
+    .slide-list {
+      [dir='rtl'] .slick-slide {
+        float: left;
+      }
+      &.slide-one {
+        display: inline-block;
+      }
+    }
+
+    .slick-track,
+    .slick-list {
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .slide-list {
+      // @include vw(margin-top, 40px);
+      // &:first-child { margin-top: 0; }
+      .slick-slide {
+        @include vw(margin, 0 55px);
+        @include transition(all, 0.15s);
+        @include breakpoint(desktop) {
+          // margin: 0;
         }
-        .thin-title {
-            line-height: 1.26;
-            @include vw(font-size, 50px);
-            font-weight: 400;
-                @include vw(letter-spacing, -2.5px);
-                @include breakpoint(desktop) {
-                line-height: 1.25;
-                font-size: 60px;
-                letter-spacing: -3px;
+        &:not(.slick-current) {
+          @include transitionDelay(0s);
+        }
+        &:only-child {
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+      a {
+        @extend .grid;
+        z-index: 1;
+        display: block;
+        font-size: 0;
+        @include vw(height, 150px);
+        @include vw(padding-left, 150px);
+        @include vw(line-height, 150px);
+        @include transition(all, 0.15s);
+        @include breakpoint(desktop) {
+          height: 180px;
+          padding-left: 180px;
+          line-height: 180px;
+        }
+        &:hover {
+          span {
+            // @include vw(font-size, 60px);
+            // @include vw(letter-spacing, -3px);
+            white-space: nowrap;
+            @include breakpoint(desktop) {
+              // font-size: 80px;
+              // letter-spacing: -4px;
             }
+            &.thumb {
+              @include transform(translateY(-50%) scale(1.1, 1.1));
+            }
+            &.unit {
+              color: #0064ff;
+            }
+            &.location {
+              color: #32e6af;
+              .badge {
+                color: #000;
+              }
+            }
+          }
         }
-        .big-title {
-            line-height: 1.26;
-            @include vw(font-size, 70px);
-            font-weight: 700;
-            @include vw(letter-spacing, -3.5px);
+      }
+      span {
+        position: relative;
+        @extend .col;
+        height: 100%;
+        @include vw(margin, 0 2px);
+        @include vw(font-size, 40px);
+        font-weight: 400;
+        @include vw(letter-spacing, -2px);
+        @include transition(all, 0.15s);
+        @include transformOrigin(center center);
+        @include breakpoint(desktop) {
+          font-size: 60px;
+          letter-spacing: -3px;
+        }
+        &.thumb {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          @include vw(width, 120px);
+          @include vw(height, 120px);
+          margin: 0;
+          @include transform(translateY(-50%) scale(1, 1));
+          @include breakpoint(desktop) {
+            width: 150px;
+            height: 150px;
+          }
+        }
+        &.location {
+          @include vw(padding-right, 60px);
+        }
+        .badge {
+          position: absolute;
+          @include vw(top, 40px);
+          right: 0;
+          @include vw(width, 50px);
+          @include vw(height, 26px);
+          min-height: 13px;
+          @include vw(padding, 1px 10px 3px);
+          text-align: center;
+          line-height: 1;
+          @include vw(font-size, 19px);
+          color: #000;
+          @include vw(border-width, 1px);
+          border-style: solid;
+          border-color: #000;
+          @include vw(border-radius, 26px);
+          background-color: #fff;
+          @include boxSizing(border-box);
+          @include breakpoint(desktop) {
+            width: 59px;
+            height: 32px;
+            padding: {
+              top: 2px;
+              bottom: 4px;
+            }
+            font-size: 24px;
+            border-radius: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  .tmap-title {
+    @include linear-gradient(to right, #98968d 1%, #ced0cd 100%);
+    @include breakpoint(desktop) {
+      text-align: left;
+    }
+    .text-box {
+      position: absolute;
+      top: percent(186, 1524);
+      right: percent(101.5);
+      left: percent(101.5);
+      @include breakpoint(desktop) {
+        top: percent(442, 980);
+        left: 40%;
+      }
+      .img-title img {
+        width: auto;
+      }
+    }
+  }
+
+  .tmap-life {
+    @include vw(padding-top, 95px);
+    @include breakpoint(desktop) {
+      padding-top: 137px;
+    }
+    .text-box {
+      position: static;
+      @include breakpoint(desktop) {
+        overflow: hidden;
+        display: inline-block;
+      }
+      .thin-title {
+        @include breakpoint(desktop) {
+          float: right;
+          clear: right;
+        }
+      }
+      .img-title {
+        @include vw(margin, 10px auto 0);
+        @include breakpoint(desktop) {
+          float: left;
+          clear: left;
+          margin: 12px 20px 0 0;
+        }
+      }
+    }
+  }
+
+  .tmap-new {
+    @include linear-gradient(to left, #32e6af, #0064ff);
+    .text-box {
+      top: percent(107, 1003);
+      text-align: left;
+      color: #fff;
+      @include breakpoint(desktop) {
+        top: 130px;
+        left: 20%;
+        text-align: center;
+        .img-title img {
+          margin: 19px 20px 0 0;
+        }
+      }
+      .img-title {
+        @include vw(margin-top, 20px);
+        img {
+          @include vw(width, 481px);
+        }
+      }
+      .small-title {
+        @include breakpoint(desktop) {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+
+  .tmap-plus {
+    @include linear-gradient(to left, #d94796, #5870f6);
+    .text-box {
+      top: percent(107, 1003);
+      text-align: left;
+      color: #fff;
+      @include breakpoint(desktop) {
+        left: 30%;
+        text-align: center;
+        .img-title img {
+          margin: 19px 20px 0 0;
+        }
+      }
+      .img-title {
+        @include vw(margin-top, 20px);
+        img {
+          @include vw(width, 420px);
+        }
+        & + .small-title {
+          @include vw(margin-top, 34px);
+          @include breakpoint(desktop) {
+            margin-top: 38px;
+          }
+          & + .small-title {
+            @include vw(margin-top, 23px);
+            @include breakpoint(desktop) {
+              margin-top: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tmap-now {
+    color: #fff;
+    @include linear-gradient(to right, #0064ff, #32e6af);
+    @include breakpoint(desktop) {
+      text-align: left;
+    }
+    .text-box {
+      top: percent(107, 960);
+      @include breakpoint(desktop) {
+        top: percent(130, 560);
+        left: 50%;
+        text-align: center;
+      }
+    }
+    .img-title {
+      @extend %flexCenter;
+      & + .small-title {
+        @include vw(margin-top, 23px);
+      }
+      span {
+        @include vw(margin-left, 20px);
+      }
+    }
+  }
+
+  .tmap-cf {
+    @include vw(padding-bottom, 240px);
+    &.cf-1 {
+      .small-title {
+        @include vw(margin-top, 26px);
+      }
+      .video-box {
+        @include vw(margin-top, 110px);
+      }
+    }
+    &.cf-2 {
+      @include breakpoint(desktop) {
+        .text-box {
+          display: inline-block;
+          overflow: hidden;
+          .thin-title {
+            float: left;
+            clear: left;
+          }
+          .img-title {
+            float: right;
+            clear: right;
+            margin: 19px 0 0 20px;
+          }
+        }
+      }
+      .small-title {
+        @include vw(margin-top, 40px);
+        @include breakpoint(desktop) {
+          clear: both;
+          float: none;
+          margin-top: 0;
+          padding-top: 23px;
+        }
+      }
+      .video-box {
+        @include vw(margin-top, 50px);
+      }
+    }
+    &.cf-3 {
+      .text-box {
+        .thin-title {
+          @include vw(font-size, 50px);
         }
         .small-title {
-            line-height: 1.23;
-            @include vw(font-size, 30px);
-            font-weight: 400;
-            @include vw(letter-spacing, -1.5px);
+          @include vw(margin-top, 26px);
         }
-        .img-title {
-            vertical-align: top;
-            line-height: 1;
-            font-size: 0;
-            img {
-                @include vw(width, 220px);
-                vertical-align: top;
-            }
-            span {
-                @extend .big-title;
-            }
-        }
+      }
+      .video-box {
+        @include vw(margin-top, 113px);
+      }
     }
-
-    .tmap-slide {
-        @include vw(padding-bottom, 170px);
+    &.cf-4 {
+      .text-box {
+        .thin-title {
+          @include vw(font-size, 50px);
+        }
+        .small-title {
+          @include vw(margin-top, 26px);
+        }
+      }
+      .video-box {
+        @include vw(margin-top, 110px);
+      }
+    }
+    .text-box {
+      position: static;
+      .thin-title {
+        @include vw(font-size, 60px);
         @include breakpoint(desktop) {
-            padding-bottom: 260px;
-            &.slide-4 { padding-bottom: 170px; }
+          font-size: 70px;
         }
+      }
+      .img-title {
+        @include vw(margin-top, 10px);
+      }
     }
-
-    .slide-box {
-        @include vw(margin-top, 80px);
-        @include breakpoint(desktop) {
-            margin-top: 86px;
-        }
-
-        .slide-list {
-            [dir='rtl'] .slick-slide { float: left; }
-            &.slide-one { display: inline-block; }
-        }
-
-        .slick-track,
-        .slick-list {
-            -webkit-transform: translate3d(0, 0, 0);
-            -moz-transform: translate3d(0, 0, 0);
-            -ms-transform: translate3d(0, 0, 0);
-            -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-        }
-
-        .slide-list {
-            // @include vw(margin-top, 40px);
-            // &:first-child { margin-top: 0; }
-            .slick-slide {
-                @include vw(margin, 0 55px);
-                @include transition(all, .15s);
-                @include breakpoint(desktop){
-                    // margin: 0;
-                }
-                &:not(.slick-current) {
-                    @include transitionDelay(0s);
-                }
-                &:only-child { width: 100%;  margin: 0 auto; }
-            }
-            a {
-                @extend .grid;
-                z-index: 1;
-                display: block;
-                font-size: 0;
-                @include vw(height, 150px);
-                @include vw(padding-left, 150px);
-                @include vw(line-height, 150px);
-                @include transition(all, .15s);
-                @include breakpoint(desktop) {
-                    height: 180px;
-                    padding-left: 180px;
-                    line-height: 180px;
-                }
-                &:hover {
-                    span {
-                        // @include vw(font-size, 60px);
-                        // @include vw(letter-spacing, -3px);
-                        white-space: nowrap;
-                        @include breakpoint(desktop) {
-                            // font-size: 80px;
-                            // letter-spacing: -4px;
-                        }
-                        &.thumb {
-                            @include transform(translateY(-50%) scale(1.1, 1.1));
-                        }
-                        &.unit { color: #0064ff; }
-                        &.location {
-                            color: #32e6af;
-                            .badge { color: #000; }
-                        }
-                    }
-                }
-            }
-            span {
-                position: relative;
-                @extend .col;
-                height: 100%;
-                @include vw(margin, 0 2px);
-                @include vw(font-size, 40px);
-                font-weight: 400;
-                @include vw(letter-spacing, -2px);
-                @include transition(all, .15s);
-                @include transformOrigin(center center);
-                @include breakpoint(desktop) {
-                    font-size: 60px;
-                    letter-spacing: -3px;
-                }
-                &.thumb {
-                    position: absolute;
-                    top: 50%;
-                    left: 0;
-                    @include vw(width, 120px);
-                    @include vw(height, 120px);
-                    margin: 0;
-                    @include transform(translateY(-50%) scale(1, 1));
-                    @include breakpoint(desktop) {
-                        width: 150px;
-                        height: 150px;
-                    }
-                }
-                &.location {
-                    @include vw(padding-right, 60px);
-                }
-                .badge {
-                    position: absolute;
-                    @include vw(top, 40px);
-                    right: 0;
-                    @include vw(width, 50px);
-                    @include vw(height, 26px);
-                    min-height: 13px;
-                    @include vw(padding, 1px 10px 3px);
-                    text-align: center;
-                    line-height: 1;
-                    @include vw(font-size, 19px);
-                    color: #000;
-                    @include vw(border-width, 1px);
-                    border-style: solid;
-                    border-color: #000;
-                    @include vw(border-radius, 26px);
-                    background-color: #fff;
-                    @include boxSizing(border-box);
-                    @include breakpoint(desktop) {
-                        width: 59px;
-                        height: 32px;
-                        padding: {
-                            top: 2px;
-                            bottom: 4px;
-                        }
-                        font-size: 24px;
-                        border-radius: 32px;
-                    }
-                }
-            }
-        }
-    }
-
-    .tmap-title {
-        @include linear-gradient(to right, #98968d 1%, #ced0cd 100%);
-        @include breakpoint(desktop){
-            text-align: left;
-        }
-        .text-box {
-            position: absolute;
-            top: percent(186,1524);
-            right: percent(101.5);
-            left: percent(101.5);
-            @include breakpoint(desktop){
-                top: percent(442,980);
-                left: 40%;
-            }
-            .img-title img { width: auto; }
-        }
-    }
-
-    .tmap-life {
-        @include vw(padding-top, 95px);
-        @include breakpoint(desktop){
-            padding-top: 137px;
-        }
-        .text-box {
-            position: static;
-            @include breakpoint(desktop){
-                overflow: hidden;
-                display: inline-block;
-            }
-            .thin-title {
-                @include breakpoint(desktop){
-                    float: right;
-                    clear: right;
-                }
-            }
-            .img-title {
-                @include vw(margin, 10px auto 0);
-                @include breakpoint(desktop){
-                    float: left;
-                    clear: left;
-                    margin: 12px 20px 0 0;
-                }
-            }
-        }
-    }
-
-    .tmap-new {
-        @include linear-gradient(to left, #32e6af, #0064ff);
-        .text-box {
-            top: percent(107,1003);
-            text-align: left;
-            color: #fff;
-            @include breakpoint(desktop) {
-                top: 130px;
-                left: 20%;
-                text-align: center;
-                .img-title img { margin: 19px 20px 0 0; }
-            }
-            .img-title {
-                @include vw(margin-top, 20px);
-                img { @include vw(width, 481px); }
-            }
-            .small-title {
-                @include breakpoint(desktop) {
-                    margin-top: 30px;
-                }
-            }
-        }
-    }
-
-    .tmap-plus {
-        @include linear-gradient(to left, #d94796, #5870f6);
-        .text-box {
-            top: percent(107,1003);
-            text-align: left;
-            color: #fff;
-            @include breakpoint(desktop) {
-                left: 30%;
-                text-align: center;
-                .img-title img { margin: 19px 20px 0 0; }
-            }
-            .img-title {
-                @include vw(margin-top, 20px);
-                img { @include vw(width, 420px); }
-                & + .small-title {
-                    @include vw(margin-top, 34px);
-                    @include breakpoint(desktop) {
-                        margin-top: 38px;
-                    }
-                    & + .small-title {
-                        @include vw(margin-top, 23px);
-                        @include breakpoint(desktop) {
-                            margin-top: 30px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .tmap-now {
-        color: #fff;
-        @include linear-gradient(to right, #0064ff, #32e6af);
-        @include breakpoint(desktop) {
-            text-align: left;
-        }
-        .text-box {
-            top: percent(107,960);
-            @include breakpoint(desktop) {
-                top: percent(130,560);
-                left: 50%;
-                text-align: center;
-            }
-        }
-        .img-title {
-            @extend %flexCenter;
-            & + .small-title { @include vw(margin-top, 23px); }
-            span { @include vw(margin-left, 20px); }
-        }
-    }
-
-    .tmap-cf {
-        @include vw(padding-bottom, 240px);
-        &.cf-1 {
-            .small-title { @include vw(margin-top, 26px); }
-            .video-box { @include vw(margin-top, 110px); }
-        }
-        &.cf-2 {
-            @include breakpoint(desktop){
-                .text-box {
-                    display: inline-block;
-                    overflow: hidden;
-                    .thin-title {
-                        float: left;
-                        clear: left;
-                    }
-                    .img-title {
-                        float: right;
-                        clear: right;
-                        margin: 19px 0 0 20px;
-                    }
-                }
-            }
-            .small-title {
-                @include vw(margin-top, 40px);
-                @include breakpoint(desktop){
-                    clear: both;
-                    float: none;
-                    margin-top: 0;
-                    padding-top: 23px;
-                }
-            }
-            .video-box { @include vw(margin-top, 50px); }
-        }
-        &.cf-3 {
-            .text-box {
-                .thin-title { @include vw(font-size, 50px); }
-                .small-title { @include vw(margin-top, 26px); }
-            }
-            .video-box { @include vw(margin-top, 113px); }
-        }
-        &.cf-4 {
-            .text-box {
-                .thin-title { @include vw(font-size, 50px); }
-                .small-title { @include vw(margin-top, 26px); }
-            }
-            .video-box { @include vw(margin-top, 110px); }
-        }
-        .text-box {
-            position: static;
-            .thin-title {
-                @include vw(font-size, 60px);
-                @include breakpoint(desktop) {
-                    font-size: 70px;
-                }
-            }
-            .img-title { @include vw(margin-top, 10px); }
-        }
-        .video-box {
-            position: relative;
-            @include vw(height, 377px);
-            margin: 0 percent(40);
-            overflow: hidden;
-            @include boxShadow(10px 10px 0 0 rgba(0, 0, 0, .16));
-            @include breakpoint(desktop) {
-                width: 1138px;
-                height: 638px;
-                margin: 0 auto;
-            }
-            .video,
-            video,
-            iframe {
-                display: block;
-                width: 100%;
-                height: 100%;
-            }
-            .video-cover {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-    }
-
-    .tmap-relax {
-        @include linear-gradient(to left, #ff46b4, #783cff);
-        .text-box {
-            top: percent(196,960);
-            text-align: left;
-            color: #fff;
-            @include breakpoint(desktop) {
-                left: 30%;
-                text-align: center;
-                .img-title img { margin: 19px 20px 0 0; }
-            }
-            .img-title {
-                @extend %flexCenter;
-                justify-content: left;
-                @include vw(margin-top, 20px);
-                @include breakpoint(desktop) {
-                    justify-content: center;
-                }
-                img {
-                    @include vw(width, 335px);
-                    @include breakpoint(desktop) {
-                        width: 482px;
-                    }
-                }
-                & + .small-title {
-                    @include vw(margin-top, 20px);
-                    @include breakpoint(desktop) {
-                        margin-top: 37px;
-                    }
-                }
-            }
-        }
-    }
-
-    .tmap-event {
-        @include linear-gradient(to left, #55d4d9, #0064ff 52%, #ff46b4);
-        @include breakpoint(desktop) {
-            text-align: left;
-        }
-        .text-box {
-            top: percent(175,1433);
-            color: #fff;
-            @include breakpoint(desktop) {
-                top: percent(357,998);
-                left: 50%;
-                text-align: center;
-            }
-            .thin-title {
-                margin-top: 0;
-                @include vw(font-size, 70px);
-                @include vw(letter-spacing, -3.5px);
-                @include breakpoint(desktop) {
-                    font-size: 110px;
-                }
-            }
-            .small-title {
-                @include vw(font-size, 50px);
-            }
-        }
-    }
-
-    .tmap-event-open {
-        .img-box { background: #ffd49d; }
-        .event-list {
-            @include vw(margin, 90px 40px 0);
-            @include breakpoint(desktop) {
-                margin-right: 0;
-                margin-left: 0;
-                font-size: 0;
-            }
-            a {
-                display: block;
-                @include vw(margin-top, 28px);
-                @include vw(padding, 69px 138px 84px 50px);
-                color: #fff;
-                @include vw(border-radius, 50px);
-                @include boxSizing(border-box);
-                @include breakpoint(desktop) {
-                    display: inline-block;
-                    vertical-align: top;
-                    width: 555px;
-                    margin: 0 0 0 28px;
-                    padding: 69px 34px 84px 50px;
-                }
-                &:first-child {
-                    margin-top: 0;
-                    background-color: #32e6af;
-                    @include breakpoint(desktop) {
-                        margin-left: 0;
-                    }
-                }
-                &:last-child { background-color: #783cff; }
-            }
-            .text-box {
-                position: static;
-                text-align: left;
-                .big-title {
-                    @include vw(margin-top, 7px);
-                    @include vw(font-size, 60px);
-                    @include vw(letter-spacing, -3px);
-                    & + .small-title { @include vw(margin-top, 26px); }
-                    .arrow {
-                        display: inline-block;
-                        @include vw(margin-left, 10px);
-                        @include animation(effectMoving, 1s, $iteration: infinite){
-                            0%, 100% { @include translateX(0); }
-                            50% { @include translateX(-10px); }
-                        }
-                    }
-                }
-                .small-title {
-                    @include vw(font-size, 40px);
-                    @include vw(letter-spacing, -2px);
-                }
-            }
-        }
-        &.open-211101 {
-           .img-box {
-                background: #fff;
-                img { width: 100%; }
-            }
-            .event-list {
-                a {
-                    @include vw(padding, 47px 0 52px 50px);
-                    @include breakpoint(desktop){
-                        padding: 60px 50px;
-                        &:first-child {
-                            padding: 49px 50px;
-                        }
-                    }
-                }
-                .text-box .big-title {
-                    @include vw(margin-top, 20px);
-                    @include vw(font-size, 50px);
-                    @include breakpoint(desktop){
-                        font-size: 46px;
-                    }
-                    & + .small-title {
-                        @include vw(margin-top, 23px);
-                        @include vw(font-size, 46px);
-                        font-weight: bold;
-                        color: #783cff;
-                    }
-                    .arrow {
-                        @include vw(width, 40px);
-                        @include vw(margin-left, 40px);
-                        vertical-align: middle;
-                        line-height: 1;
-                    }
-                }
-            }
-        }
-        &.open-211105 {
-            .img-box {
-                 background: #fff;
-                 img { width: 100%; }
-             }
-             .event-list {
-                 a {
-                    @include vw(padding, 47px 0 52px 50px);
-                    @include breakpoint(desktop){
-                        padding: 60px 50px;
-                        &:first-child { padding: 60px 50px; }
-                    }
-                 }
-                 .text-box .big-title {
-                    @include vw(margin-top, 20px);
-                    @include vw(font-size, 50px);
-                    @include breakpoint(desktop){
-                        font-size: 46px;
-                    }
-                    strong {
-                        color: #0064ff;
-                        .arrow {
-                            display: inline-block;
-                            @include animation(effectMoving2, 1s, $iteration: infinite){
-                                0%, 100% { @include translateX(0); }
-                                50% { @include translateX(-10px); }
-                            }
-                        }
-                    }
-                    .arrow {
-                        @include vw(width, 40px);
-                        @include vw(margin-left, 40px);
-                        vertical-align: middle;
-                        line-height: 1;
-                    }
-                }
-             }
-         }
-    }
-
-    .tmap-sns {
-        margin: 0 percent(63);
-        @include vw(margin-top, 132px);
-        .sns-list {
-            @extend .grid;
-            @include breakpoint(desktop){
-                display: inline-block;
-                width: 500px;
-            }
-            a {
-                @extend .col;
-                width: 25%;
-                @include vw(padding, 30px 0);
-                img { @include vw(width, 50px); }
-            }
-        }
-        .store-list {
-            @include vw(margin-top, 36px);
-            font-size: 0;
-            a {
-                display: inline-block;
-                vertical-align: middle;
-                @include breakpoint(desktop){
-                    margin: 0 14px;
-                }
-                img { @include vw(width, 60px); }
-                span {
-                    display: inline-block;
-                    @include vw(margin, 15px 0);
-                    line-height: 1.25;
-                    @include vw(font-size, 24px);
-                    font-weight: 700;
-                    @include vw(letter-spacing, -1.2px);
-                }
-            }
-        }
-    }
-
-    .tmap-share {
-        position: fixed;
+    .video-box {
+      position: relative;
+      @include vw(height, 377px);
+      margin: 0 percent(40);
+      overflow: hidden;
+      @include boxShadow(10px 10px 0 0 rgba(0, 0, 0, 0.16));
+      @include breakpoint(desktop) {
+        width: 1138px;
+        height: 638px;
+        margin: 0 auto;
+      }
+      .video,
+      video,
+      iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .video-cover {
+        position: absolute;
+        top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 2;
-        @include translateY(100%);
-        @include transition(all, .3s);
-        @include breakpoint(desktop) {
-            top: 8%;
-            bottom: auto;
-            left: auto;
-            @include translateY(0);
-            @include translateX(100%);
+        img {
+          width: 100%;
+          height: 100%;
         }
-        &.active {
-            @include translateY(0);
-            @include breakpoint(desktop) {
-                @include translateX(0);
-            }
-        }
-        .share-list {
-            font-size: 0;
-            a {
-                position: relative;
-                display: inline-block;
-                width: 33.33%;
-                @include vw(padding, 41.5px 0 41.5px);
-                @include vw(font-size, 30px);
-                font-weight: 400;
-                line-height: .73;
-                color: #fff;
-                @include vw(letter-spacing, -.9px);
-                background-color: #000;
-                @include boxSizing(border-box);
-                @include breakpoint(desktop) {
-                    display: block;
-                    width: 150px;
-                    height: 150px;
-                    margin-top: 10px;
-                    padding: 0;
-                    line-height: 1;
-                    border-radius: 50%;
-                }
-                &:first-child {
-                    background: #ff46b4;
-                    @include breakpoint(desktop) {
-                        // height: 188px;
-                        margin-top: 0;
-                        font-size: 0;
-                        border-radius: 0;
-                        background: url('../img/pc/icon_event2.png?v=20211206') no-repeat 0 0;
-                        background-size: auto 100%;
-                    }
-                    &:before { display: none; }
-                }
-                &:before {
-                    content: '';
-                    position: absolute;
-                    @include vw(top, 10px);
-                    @include vw(bottom, 10px);
-                    left: 0;
-                    display: block;
-                    @include vw(width, 1px);
-                    // height: 100%;
-                    background: rgba(255, 255, 255, .2);
-                    @include breakpoint(desktop) {
-                        display: none;
-                    }
-                }
-                span {
-                    @extend %flexCenter;
-                    height: 100%;
-                }
-            }
-        }
-        .sns-list {
-            position: relative;
-            z-index: -1;
-            line-height: 1;
-            font-size: 0;
-            @include translateY(100%);
-            @include transition(all, .5s, cubic-bezier(0.68, -0.55, 0.27, 1.55));
-            @include breakpoint(desktop) {
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                @include translateXY(100%, 20px);
-                @media screen and (max-height: 1024px) {
-                    right: 0;
-                    left: auto;
-                    white-space: nowrap;
-                }
-            }
-            &.active {
-                display: block;
-                @include translateY(-20%);
-                @include breakpoint(desktop) {
-                    @include translateXY(-50%, 20px);
-                    @media screen and (max-height: 1024px) {
-                        @include translateXY(-5%, 20px);
-                    }
-                }
-            }
-            a {
-                display: inline-block;
-                @include vw(width,100px);
-                @include vw(height,100px);
-                @include vw(margin, 0 25px);
-                @include breakpoint(desktop) {
-                    display: block;
-                    margin: 10px 0 0;
-                    &:first-child { margin: 0; }
-                    @media screen and (max-height: 1024px) {
-                        display: inline-block;
-                        margin: 0 5px;
-                        &:first-child { margin-right: 5px; }
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 
-    .tmap-banner {
-        @include vw(margin-top, -180px);
-        @include vw(padding-bottom, 140px);
-        .banner-box {
-            @include vw(margin, 0 40px);
-            a {
-                display: inline-block;
-                width: 100%;
-                @include vw(padding, 24px 45px);
-                @include vw(font-size, 30px);
-                color: #fff;
-                @include vw(border-radius, 50px);
-                border: solid 1px #707070;
-                background-color: #0064ff;
-                background-image: url('../img/mobile/icon_arrow.png');
-                background-repeat: no-repeat;
-                @include vw(background-size, 20px);
-                @include boxSizing(border-box);
-                @include animation(effectMovingMO, 1s, $iteration: infinite){
-                    0%, 100% { background-position: 90% 66%; }
-                    50% { background-position: 91% 66%; }
-                }
-                @include breakpoint(desktop){
-                    width: 1138px;
-                    padding: 26.7px 71.4px 30px;
-                    background-image: url('../img/pc/icon_arrow.png');
-                    background-size: 60px;
-                    @include animation(effectMovingPC, 1s, $iteration: infinite){
-                        0%, 100% { background-position: 90% center; }
-                        50% { background-position: 91% center; }
-                    }
-                }
-                strong { font-weight: normal; color: #32e6af; }
-                img {
-                    display: block;
-                    @include vw(width, 264px);
-                    @include vw(margin-bottom, 6px);
-                    margin: 0 auto;
-                    @include breakpoint(desktop){
-                        width: 351px;
-                        margin-bottom: 13px;
-                    }
-                }
-            }
+  .tmap-relax {
+    @include linear-gradient(to left, #ff46b4, #783cff);
+    .text-box {
+      top: percent(196, 960);
+      text-align: left;
+      color: #fff;
+      @include breakpoint(desktop) {
+        left: 30%;
+        text-align: center;
+        .img-title img {
+          margin: 19px 20px 0 0;
         }
+      }
+      .img-title {
+        @extend %flexCenter;
+        justify-content: left;
+        @include vw(margin-top, 20px);
+        @include breakpoint(desktop) {
+          justify-content: center;
+        }
+        img {
+          @include vw(width, 335px);
+          @include breakpoint(desktop) {
+            width: 482px;
+          }
+        }
+        & + .small-title {
+          @include vw(margin-top, 20px);
+          @include breakpoint(desktop) {
+            margin-top: 37px;
+          }
+        }
+      }
     }
+  }
+
+  .tmap-event {
+    @include linear-gradient(to left, #55d4d9, #0064ff 52%, #ff46b4);
+    @include breakpoint(desktop) {
+      text-align: left;
+    }
+    .text-box {
+      top: percent(175, 1433);
+      color: #fff;
+      @include breakpoint(desktop) {
+        top: percent(357, 998);
+        left: 50%;
+        text-align: center;
+      }
+      .thin-title {
+        margin-top: 0;
+        @include vw(font-size, 70px);
+        @include vw(letter-spacing, -3.5px);
+        @include breakpoint(desktop) {
+          font-size: 110px;
+        }
+      }
+      .small-title {
+        @include vw(font-size, 50px);
+      }
+    }
+  }
+
+  .tmap-event-open {
+    .img-box {
+      background: #ffd49d;
+    }
+    .event-list {
+      @include vw(margin, 90px 40px 0);
+      @include breakpoint(desktop) {
+        margin-right: 0;
+        margin-left: 0;
+        font-size: 0;
+      }
+      a {
+        display: block;
+        @include vw(margin-top, 28px);
+        @include vw(padding, 69px 138px 84px 50px);
+        color: #fff;
+        @include vw(border-radius, 50px);
+        @include boxSizing(border-box);
+        @include breakpoint(desktop) {
+          display: inline-block;
+          vertical-align: top;
+          width: 555px;
+          margin: 0 0 0 28px;
+          padding: 69px 34px 84px 50px;
+        }
+        &:first-child {
+          margin-top: 0;
+          background-color: #32e6af;
+          @include breakpoint(desktop) {
+            margin-left: 0;
+          }
+        }
+        &:last-child {
+          background-color: #783cff;
+        }
+      }
+      .text-box {
+        position: static;
+        text-align: left;
+        .big-title {
+          @include vw(margin-top, 7px);
+          @include vw(font-size, 60px);
+          @include vw(letter-spacing, -3px);
+          & + .small-title {
+            @include vw(margin-top, 26px);
+          }
+          .arrow {
+            display: inline-block;
+            @include vw(margin-left, 10px);
+            @include animation(effectMoving, 1s, $iteration: infinite) {
+              0%,
+              100% {
+                @include translateX(0);
+              }
+              50% {
+                @include translateX(-10px);
+              }
+            }
+          }
+        }
+        .small-title {
+          @include vw(font-size, 40px);
+          @include vw(letter-spacing, -2px);
+        }
+      }
+    }
+    &.open-211101 {
+      .img-box {
+        background: #fff;
+        img {
+          width: 100%;
+        }
+      }
+      .event-list {
+        a {
+          @include vw(padding, 47px 0 52px 50px);
+          @include breakpoint(desktop) {
+            padding: 60px 50px;
+            &:first-child {
+              padding: 49px 50px;
+            }
+          }
+        }
+        .text-box .big-title {
+          @include vw(margin-top, 20px);
+          @include vw(font-size, 50px);
+          @include breakpoint(desktop) {
+            font-size: 46px;
+          }
+          & + .small-title {
+            @include vw(margin-top, 23px);
+            @include vw(font-size, 46px);
+            font-weight: bold;
+            color: #783cff;
+          }
+          .arrow {
+            @include vw(width, 40px);
+            @include vw(margin-left, 40px);
+            vertical-align: middle;
+            line-height: 1;
+          }
+        }
+      }
+    }
+    &.open-211105 {
+      .img-box {
+        background: #fff;
+        img {
+          width: 100%;
+        }
+      }
+      .event-list {
+        a {
+          @include vw(padding, 47px 0 52px 50px);
+          @include breakpoint(desktop) {
+            padding: 60px 50px;
+            &:first-child {
+              padding: 60px 50px;
+            }
+          }
+        }
+        .text-box .big-title {
+          @include vw(margin-top, 20px);
+          @include vw(font-size, 50px);
+          @include breakpoint(desktop) {
+            font-size: 46px;
+          }
+          strong {
+            color: #0064ff;
+            .arrow {
+              display: inline-block;
+              @include animation(effectMoving2, 1s, $iteration: infinite) {
+                0%,
+                100% {
+                  @include translateX(0);
+                }
+                50% {
+                  @include translateX(-10px);
+                }
+              }
+            }
+          }
+          .arrow {
+            @include vw(width, 40px);
+            @include vw(margin-left, 40px);
+            vertical-align: middle;
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .tmap-sns {
+    margin: 0 percent(63);
+    @include vw(margin-top, 132px);
+    .sns-list {
+      @extend .grid;
+      @include breakpoint(desktop) {
+        display: inline-block;
+        width: 500px;
+      }
+      a {
+        @extend .col;
+        width: 25%;
+        @include vw(padding, 30px 0);
+        img {
+          @include vw(width, 50px);
+        }
+      }
+    }
+    .store-list {
+      @include vw(margin-top, 36px);
+      font-size: 0;
+      a {
+        display: inline-block;
+        vertical-align: middle;
+        @include breakpoint(desktop) {
+          margin: 0 14px;
+        }
+        img {
+          @include vw(width, 60px);
+        }
+        span {
+          display: inline-block;
+          @include vw(margin, 15px 0);
+          line-height: 1.25;
+          @include vw(font-size, 24px);
+          font-weight: 700;
+          @include vw(letter-spacing, -1.2px);
+        }
+      }
+    }
+  }
+
+  .tmap-share {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    @include translateY(100%);
+    @include transition(all, 0.3s);
+    @include breakpoint(desktop) {
+      top: 8%;
+      bottom: auto;
+      left: auto;
+      @include translateY(0);
+      @include translateX(100%);
+    }
+    &.active {
+      @include translateY(0);
+      @include breakpoint(desktop) {
+        @include translateX(0);
+      }
+    }
+    .share-list {
+      font-size: 0;
+      a {
+        position: relative;
+        display: inline-block;
+        width: 33.33%;
+        @include vw(padding, 41.5px 0 41.5px);
+        @include vw(font-size, 30px);
+        font-weight: 400;
+        line-height: 0.73;
+        color: #fff;
+        @include vw(letter-spacing, -0.9px);
+        background-color: #000;
+        @include boxSizing(border-box);
+        @include breakpoint(desktop) {
+          display: block;
+          width: 150px;
+          height: 150px;
+          margin-top: 10px;
+          padding: 0;
+          line-height: 1;
+          border-radius: 50%;
+        }
+        &:first-child {
+          // background: #ff46b4;
+          @include breakpoint(desktop) {
+            // height: 188px;
+            margin-top: 0;
+            // font-size: 0;
+            // border-radius: 0;
+            // background: url('../img/pc/icon_event2.png?v=20211206') no-repeat 0 0;
+            // background-size: auto 100%;
+          }
+          &:before {
+            display: none;
+          }
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          @include vw(top, 10px);
+          @include vw(bottom, 10px);
+          left: 0;
+          display: block;
+          @include vw(width, 1px);
+          // height: 100%;
+          background: rgba(255, 255, 255, 0.2);
+          @include breakpoint(desktop) {
+            display: none;
+          }
+        }
+        span {
+          @extend %flexCenter;
+          height: 100%;
+        }
+      }
+    }
+    .sns-list {
+      position: relative;
+      z-index: -1;
+      line-height: 1;
+      font-size: 0;
+      @include translateY(100%);
+      @include transition(all, 0.5s, cubic-bezier(0.68, -0.55, 0.27, 1.55));
+      @include breakpoint(desktop) {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        @include translateXY(100%, 20px);
+        @media screen and (max-height: 1024px) {
+          right: 0;
+          left: auto;
+          white-space: nowrap;
+        }
+      }
+      &.active {
+        display: block;
+        @include translateY(-20%);
+        @include breakpoint(desktop) {
+          @include translateXY(-50%, 20px);
+          @media screen and (max-height: 1024px) {
+            @include translateXY(-5%, 20px);
+          }
+        }
+      }
+      a {
+        display: inline-block;
+        @include vw(width, 100px);
+        @include vw(height, 100px);
+        @include vw(margin, 0 25px);
+        @include breakpoint(desktop) {
+          display: block;
+          margin: 10px 0 0;
+          &:first-child {
+            margin: 0;
+          }
+          @media screen and (max-height: 1024px) {
+            display: inline-block;
+            margin: 0 5px;
+            &:first-child {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tmap-banner {
+    @include vw(margin-top, -180px);
+    @include vw(padding-bottom, 140px);
+    .banner-box {
+      @include vw(margin, 0 40px);
+      a {
+        display: inline-block;
+        width: 100%;
+        @include vw(padding, 24px 45px);
+        @include vw(font-size, 30px);
+        color: #fff;
+        @include vw(border-radius, 50px);
+        border: solid 1px #707070;
+        background-color: #0064ff;
+        background-image: url('../img/mobile/icon_arrow.png');
+        background-repeat: no-repeat;
+        @include vw(background-size, 20px);
+        @include boxSizing(border-box);
+        @include animation(effectMovingMO, 1s, $iteration: infinite) {
+          0%,
+          100% {
+            background-position: 90% 66%;
+          }
+          50% {
+            background-position: 91% 66%;
+          }
+        }
+        @include breakpoint(desktop) {
+          width: 1138px;
+          padding: 26.7px 71.4px 30px;
+          background-image: url('../img/pc/icon_arrow.png');
+          background-size: 60px;
+          @include animation(effectMovingPC, 1s, $iteration: infinite) {
+            0%,
+            100% {
+              background-position: 90% center;
+            }
+            50% {
+              background-position: 91% center;
+            }
+          }
+        }
+        strong {
+          font-weight: normal;
+          color: #32e6af;
+        }
+        img {
+          display: block;
+          @include vw(width, 264px);
+          @include vw(margin-bottom, 6px);
+          margin: 0 auto;
+          @include breakpoint(desktop) {
+            width: 351px;
+            margin-bottom: 13px;
+          }
+        }
+      }
+    }
+  }
 }
