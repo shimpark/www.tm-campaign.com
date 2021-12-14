@@ -6350,10 +6350,8 @@ button {
 
 @media (max-width: 1600px) {
   .tmap .tmap-event-open.open-211213 .btn-more {
-    height: 100px;
-    line-height: 100px;
+    width: 380px;
     font-size: 38px;
-    bottom: 80px;
   }
   .tmap .tmap-event-open.open-211213 .btn-more .icon {
     width: 35px;
@@ -6362,17 +6360,46 @@ button {
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1550px) {
   .tmap .tmap-event-open.open-211213 .btn-more {
-    width: 350px;
-    height: 90px;
-    line-height: 90px;
-    font-size: 34px;
-    bottom: 60px;
+    width: 360px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .tmap .tmap-event-open.open-211213 .btn-more {
+    width: 330px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 35px;
+    bottom: 80px;
   }
   .tmap .tmap-event-open.open-211213 .btn-more .icon {
     width: 30px;
     height: 30px;
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 1350px) {
+  .tmap .tmap-event-open.open-211213 .btn-more {
+    width: 310px;
+    font-size: 33px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .tmap .tmap-event-open.open-211213 .btn-more {
+    width: 290px;
+    bottom: 70px;
+    font-size: 31px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .tmap .tmap-event-open.open-211213 .btn-more {
+    width: 280px;
+    bottom: 65px;
   }
 }
 

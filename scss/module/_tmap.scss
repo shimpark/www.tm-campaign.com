@@ -711,26 +711,41 @@
           }
         }
         @media (max-width: 1600px) {
-          height: 100px;
-          line-height: 100px;
+          width: 380px;
           font-size: 38px;
-          bottom: 80px;
           .icon {
             width: 35px;
             height: 35px;
             margin-right: 30px;
           }
         }
-        @media (max-width: 1400px) {
-          width: 350px;
-          height: 90px;
-          line-height: 90px;
-          font-size: 34px;
-          bottom: 60px;
+        @media (max-width: 1550px) {
+          width: 360px;
+        }
+        @media (max-width: 1450px) {
+          width: 330px;
+          height: 100px;
+          line-height: 100px;
+          font-size: 35px;
+          bottom: 80px;
           .icon {
             width: 30px;
             height: 30px;
+            margin-right: 25px;
           }
+        }
+        @media (max-width: 1350px) {
+          width: 310px;
+          font-size: 33px;
+        }
+        @media (max-width: 1250px) {
+          width: 290px;
+          bottom: 70px;
+          font-size: 31px;
+        }
+        @media (max-width: 1150px) {
+          width: 280px;
+          bottom: 65px;
         }
         @media (max-width: 1099px) {
           display: none;
