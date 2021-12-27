@@ -511,7 +511,7 @@
 
   .tmap-event-open {
     .img-box {
-      background: #ffd49d;
+      // background: #ffd49d;
       position: relative;
     }
     .event-list {
@@ -799,6 +799,47 @@
             right: -20px;
             @media (max-width: 600px) {
               right: 0;
+            }
+          }
+        }
+      }
+    }
+    &.open-211223 {
+      .btn-add {
+        display: flex;
+        align-items: center;
+        @include vw(width, 680px);
+        @include vw(height, 140px);
+        @include vw(margin-top, 60px);
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100px;
+        @include vw(padding-left, 160px);
+        font-weight: bold;
+        @include vw(font-size, 48px);
+        letter-spacing: -2.4px;
+        color: #fff;
+        background-color: #0064ff;
+        box-sizing: border-box;
+        .arrow {
+          display: inline-block;
+          @include vw(width, 40px);
+          position: absolute;
+          top: 50%;
+          right: 50px;
+          @include vw(margin-top, -20px);
+          @media (max-width: 600px) {
+            right: 3;
+          }
+          @include vw(margin-left, 10px);
+          @include animation(effectMoving, 1s, $iteration: infinite) {
+            0%,
+            100% {
+              @include translateX(0);
+            }
+            50% {
+              @include translateX(-10px);
             }
           }
         }

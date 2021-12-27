@@ -5925,7 +5925,6 @@ button {
 }
 
 .tmap .tmap-event-open .img-box {
-  background: #ffd49d;
   position: relative;
 }
 
@@ -6525,6 +6524,122 @@ button {
 @media (max-width: 600px) {
   .tmap .tmap-event-open.open-211213 .event-list .text-box .big-title .arrow, .tmap .tmap-event-open.open-211213 .event-list .text-box .img-title span .arrow {
     right: 0;
+  }
+}
+
+.tmap .tmap-event-open.open-211223 .btn-add {
+  display: flex;
+  align-items: center;
+  width: 94.44444vw;
+  height: 19.44444vw;
+  margin-top: 8.33333vw;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100px;
+  padding-left: 22.22222vw;
+  font-weight: bold;
+  font-size: 6.66667vw;
+  letter-spacing: -2.4px;
+  color: #fff;
+  background-color: #0064ff;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open.open-211223 .btn-add {
+    width: 680px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open.open-211223 .btn-add {
+    height: 140px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open.open-211223 .btn-add {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open.open-211223 .btn-add {
+    padding-left: 160px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open.open-211223 .btn-add {
+    font-size: 48px;
+  }
+}
+
+.tmap .tmap-event-open.open-211223 .btn-add .arrow {
+  display: inline-block;
+  width: 5.55556vw;
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  margin-top: -2.77778vw;
+  margin-left: 1.38889vw;
+  animation-name: effectMoving;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-direction: normal;
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open.open-211223 .btn-add .arrow {
+    width: 40px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open.open-211223 .btn-add .arrow {
+    margin-top: -20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tmap .tmap-event-open.open-211223 .btn-add .arrow {
+    right: 3;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .tmap .tmap-event-open.open-211223 .btn-add .arrow {
+    margin-left: 10px;
+  }
+}
+
+@-webkit-keyframes effectMoving {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes effectMoving {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
   }
 }
 
