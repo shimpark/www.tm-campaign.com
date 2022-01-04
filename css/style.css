@@ -4579,7 +4579,7 @@ button {
     margin-left: 0;
   }
   .tmap .tmap-header .header-menu .menu-list a:last-child {
-    display: none;
+    /*display: none;*/
   }
 }
 
